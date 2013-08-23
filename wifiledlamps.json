@@ -1,6 +1,6 @@
 {
     "name": "Wifiledlamps",
-    "version": "1.2.2",
+    "version": "1.2.3",
     "author": "Julien Syx",
     "description": [
         {"lang": "fr", "description": "Ce plugin permet à LISA de gérer les lampes LED en wifi"},
@@ -9,6 +9,10 @@
     "enabled": 1,
     "lang": ["fr","en"],
     "configuration": {
+        "controller": {
+            "address": "192.168.1.101",
+            "port": 50000
+        },
         "intents": {
             "wifiledlamps_switch": {
                 "method": "switch",
