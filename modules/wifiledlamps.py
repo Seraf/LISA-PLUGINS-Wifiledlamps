@@ -16,8 +16,8 @@ class Wifiledlamps:
         mongo = MongoClient(host=self.configuration_lisa['database']['server'],
                             port=self.configuration_lisa['database']['port'])
         self.configuration = mongo.lisa.plugins.find_one({"name": "Wifiledlamps"})
-        self.led_connection = wifileds.limitlessled.connect(self.configuration['configuration']['address'],
-                                                            self.configuration['configuration']['port'])
+        self.led_connection = wifileds.limitlessled.connect(self.configuration['configuration']['controller']['address'],
+                                                            self.configuration['configuration']['controller']['port'])
 
     def switch(self, jsonInput):
         if jsonInput['outcome']['entities']['wifiledlamps_actions']['value'] == 'on':
