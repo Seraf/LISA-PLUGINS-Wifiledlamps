@@ -1,0 +1,26 @@
+{
+    "name": "Wifileds",
+    "version": "1.2.0",
+    "author": "Julien Syx",
+    "description": [
+        {"lang": "fr", "description": "Ce plugin permet à LISA de gérer les lampes LED en wifi"},
+        {"lang": "en", "description": "This plugin allow LISA to manage wifi led lamp"}
+    ],
+    "enabled": 1,
+    "lang": ["fr","en"],
+    "configuration": {
+        "intents": {
+            "wifileds_switch": {
+                "method": "switch",
+                "corpus": {}
+            },
+            "wifileds_color": {
+                "method": "changeColor",
+                "corpus": {}
+            }
+        },
+        "widgets": {
+            "switch": "Wifileds.web.views.switch"
+        }
+    }
+}
