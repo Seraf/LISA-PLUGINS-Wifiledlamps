@@ -1,6 +1,6 @@
 {
     "name": "Wifiledlamps",
-    "version": "1.2.1",
+    "version": "1.2.2",
     "author": "Julien Syx",
     "description": [
         {"lang": "fr", "description": "Ce plugin permet à LISA de gérer les lampes LED en wifi"},

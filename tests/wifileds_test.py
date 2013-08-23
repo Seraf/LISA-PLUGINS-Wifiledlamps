@@ -5,7 +5,7 @@ sys.path.append(os.path.normpath(os.path.join(os.path.abspath("../../../"))))
 import libs
 from lisa import configuration
 
-class WifiledsTestCase(unittest.TestCase):
+class WifiledlampsTestCase(unittest.TestCase):
     def setUp(self):
         factory = libs.LisaInstance
         self.proto = factory.buildProtocol(('127.0.0.1', 0))
