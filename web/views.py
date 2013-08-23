@@ -11,8 +11,8 @@ except ImportError:
 
 @login_required()
 def widget1(request, x, y):
-    from Wifileds.modules.wifileds import Wifileds
-    content = json.loads(Wifileds().switch())
+    from Wifiledlamps.modules.wifiledlamps import Wifiledlamps
+    content = json.loads(Wifiledlamps().switch())
     return render_to_response(os.path.abspath(os.path.dirname(__file__) + '/templates/widget.html'),
                               {
                                   'content': str(content['body']), 'data_sizex': "1", 'data_sizey': "1",

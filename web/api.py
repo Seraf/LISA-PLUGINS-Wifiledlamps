@@ -8,16 +8,16 @@ try:
 except ImportError:
     from lisa.settings import LISA_PATH
 
-class Wifileds(object):
+class Wifiledlamps(object):
     def __init__(self):
         return None
 
-class WifiledsResource(resources.Resource):
+class WifiledlampsResource(resources.Resource):
     class Meta:
-        resource_name = 'wifileds'
+        resource_name = 'wifiledlamps'
         allowed_methods = ()
         authorization = authorization.Authorization()
-        object_class = Wifileds
+        object_class = Wifiledlamps
         extra_actions = [
             {
                 'name': 'switch',
@@ -33,17 +33,17 @@ class WifiledsResource(resources.Resource):
                 self.wrap_view('dispatch_list'), name="api_dispatch_list"),
             url(r"^plugin/(?P<resource_name>%s)/schema%s$" % (self._meta.resource_name, trailing_slash()),
                 self.wrap_view('get_schema'), name="api_get_schema"),
-            # Will be accessible by http://127.0.0.1:8000/api/v1/plugin/chatterbot/gettime/
+            # Will be accessible by http://127.0.0.1:8000/api/v1/plugin/wifiledlamps/switch/
             url(r"^plugin/(?P<resource_name>%s)/switch%s$" % (self._meta.resource_name, trailing_slash()),
-                self.wrap_view('switch'), name="api_plugin_wifileds_switch"),
+                self.wrap_view('switch'), name="api_plugin_wifiledlamps_switch"),
         ]
 
     def switch(self, request, **kwargs):
         from tastypie.http import HttpAccepted
-        from Wifileds.modules.wifileds import Wifileds
+        from Wifiledlamps.modules.wifiledlamps import Wifiledlamps
 
         self.method_check(request, allowed=['get'])
         self.is_authenticated(request)
         self.throttle_check(request)
         self.log_throttled_access(request)
-        return self.create_response(request, { 'status': 'success', 'content': json.loads(Wifileds().switch())}, HttpAccepted)
+        return self.create_response(request, { 'status': 'success', 'content': json.loads(Wifiledlamps().switch())}, HttpAccepted)
