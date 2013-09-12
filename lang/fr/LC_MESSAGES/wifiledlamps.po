@@ -17,3 +17,6 @@ msgstr "Les lumières sont éteintes"
 
 msgid "lights are on"
 msgstr "Les lumières sont allumées"
+
+msgid "no valid command"
+msgstr "Je n'ai pas reçu de commande valide"

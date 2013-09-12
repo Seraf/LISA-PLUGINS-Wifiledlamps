@@ -11,7 +11,8 @@ path = os.path.realpath(os.path.abspath(os.path.join(os.path.split(
 _ = translation = gettext.translation(domain='wifiledlamps', localedir=path, languages=[configuration['lang']]).ugettext
 
 class Wifiledlamps:
-    def __init__(self):
+    def __init__(self, lisa):
+        self.lisa = lisa
         self.configuration_lisa = configuration
         mongo = MongoClient(host=self.configuration_lisa['database']['server'],
                             port=self.configuration_lisa['database']['port'])
@@ -26,6 +27,8 @@ class Wifiledlamps:
         elif jsonInput['outcome']['entities']['wifiledlamps_actions']['value'] == 'off':
             self.led_connection.rgb.all_off()
             body = _('lights are off')
+        else:
+            body = _('no valid command')
         return {"plugin": "Wifiledlamps",
                 "method": "switch",
                 "body": body
