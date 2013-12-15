@@ -11,7 +11,7 @@ path = os.path.realpath(os.path.abspath(os.path.join(os.path.split(
 _ = translation = gettext.translation(domain='wifiledlamps', localedir=path, languages=[configuration['lang']]).ugettext
 
 class Wifiledlamps:
-    def __init__(self, lisa):
+    def __init__(self, lisa=None):
         self.lisa = lisa
         self.configuration_lisa = configuration
         mongo = MongoClient(host=self.configuration_lisa['database']['server'],
