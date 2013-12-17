@@ -1,4 +1,1 @@
-try:
-    from web.lisa.settings import DBNAME
-except ImportError:
-    from lisa.settings import DBNAME
+from weblisa.settings import DBNAME
