@@ -15,6 +15,7 @@ class Wifiledlamps(IPlugin):
             inspect.getfile(inspect.currentframe()))[0],os.path.normpath("../lang/"))))
         self._ = translation = gettext.translation(domain='wifiledlamps',
                                                    localedir=self.path,
+                                                   fallback=True,
                                                    languages=[self.configuration_lisa['lang']]).ugettext
         self.led_connection = wifileds.limitlessled.connect(self.configuration_plugin['configuration']['controller']['address'],
                                                             self.configuration_plugin['configuration']['controller']['port'])
