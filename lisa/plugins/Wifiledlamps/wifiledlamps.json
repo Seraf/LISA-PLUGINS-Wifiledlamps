@@ -1,6 +1,6 @@
 {
     "name": "Wifiledlamps",
-    "version": "1.0.3",
+    "version": "1.2.0",
     "author": "Julien Syx",
     "pypi-url": "https://pypi.python.org/pypi/lisa-plugin-Wifiledlamps",
     "github-url": "https://raw.githubusercontent.com/Seraf/LISA-PLUGINS-Wifiledlamps/master/lisa/plugins/Wifiledlamps/wifiledlamps.json",

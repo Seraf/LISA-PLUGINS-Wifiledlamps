@@ -17,10 +17,10 @@ class Wifiledlamps(IPlugin):
                                                    localedir=self.path,
                                                    fallback=True,
                                                    languages=[self.configuration_lisa['lang']]).ugettext
-        self.led_connection = wifileds.limitlessled.connect(self.configuration_plugin['configuration']['controller']['address'],
-                                                            self.configuration_plugin['configuration']['controller']['port'])
 
     def switch(self, jsonInput):
+        self.led_connection = wifileds.limitlessled.connect(self.configuration_plugin['configuration']['controller']['address'],
+                                                            self.configuration_plugin['configuration']['controller']['port'])
         if jsonInput['outcome']['entities']['wifiledlamps_actions']['value'] == 'on':
             self.led_connection.rgb.all_on()
             body = self._('lights are on')
