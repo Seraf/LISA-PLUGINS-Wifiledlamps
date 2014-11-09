@@ -1,6 +1,6 @@
 {
     "name": "Wifiledlamps",
-    "version": "1.2.0",
+    "version": "1.2.1",
     "author": "Julien Syx",
     "pypi-url": "https://pypi.python.org/pypi/lisa-plugin-Wifiledlamps",
     "github-url": "https://raw.githubusercontent.com/Seraf/LISA-PLUGINS-Wifiledlamps/master/lisa/plugins/Wifiledlamps/wifiledlamps.json",
@@ -11,10 +11,11 @@
     "enabled": 1,
     "lang": ["fr","en"],
     "configuration": {
-        "controller": {
-            "address": "192.168.1.101",
-            "port": 50000
-        },
+        "controller": [{
+            "room": "veranda",
+            "address": "192.168.1.90",
+            "port": 8899
+        }],
         "intents": {
             "wifiledlamps_switch": {
                 "method": "switch",
